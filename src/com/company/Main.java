@@ -24,6 +24,8 @@ public class Main {
         // iterate to deck.getLength => will not get a null from the deck.
         for(int i = 1; i < deck.getLength(); i++){
             ICard card = deck.dealOneCard();
+            
+            // shuffle the deck every time.
             deck.shuffle();
             System.out.println(card != null ? card.name() : "No more cards left in deck.");
         }
