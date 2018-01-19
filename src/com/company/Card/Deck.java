@@ -24,6 +24,12 @@ public class Deck implements IDeck {
             }
         }
     }
+    
+    public int Length {
+        get {
+            return cards.size();
+        }
+    }
 
     @Override
     public void shuffle() {
