@@ -18,7 +18,7 @@ public class Main {
 
         deck = new Deck();
         deck.shuffle();
-        for(int i = 1; i < deck.Length; i++){
+        for(int i = 1; i < deck.getLength(); i++){
             ICard card = deck.dealOneCard();
             deck.shuffle();
             System.out.println(card != null ? card.name() : "No more cards left in deck.");

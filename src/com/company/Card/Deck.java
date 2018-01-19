@@ -5,6 +5,7 @@ import com.company.Card.Interfaces.IDeck;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by charlie on 4/25/2017.
@@ -27,10 +28,8 @@ public class Deck implements IDeck {
         }
     }
     
-    public int Length {
-        get {
-            return cards.size();
-        }
+    public int getLength() {
+        return cards.size();
     }
 
     @Override
