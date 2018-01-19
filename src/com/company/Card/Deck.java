@@ -17,6 +17,7 @@ public class Deck implements IDeck {
         random = new SecureRandom();
 
         // initialize default standard deck.
+        // 52 cards is standard, but in the Deck class, this is an asssumption. Should be factored out into a different class.
         cards = new ArrayList<>(52);
         for(Constants.Suits s : Constants.Suits.values()){
             for(Constants.Faces f : Constants.Faces.values()){
