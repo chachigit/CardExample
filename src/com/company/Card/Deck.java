@@ -36,7 +36,9 @@ public class Deck implements IDeck {
         int length = cards.size();
         // Knuth / Fisher-Yates implementation.
         for(int i = 0; i < length; i++){
-            swap(i, random.nextInt(length - i) + i);
+            // use Collections.Swap.
+            // swap(i, random.nextInt(length - i) + i);
+            Collections.swap(cards, i, random.nextInt(length - i) + i);
         }
     }
 
@@ -49,9 +51,9 @@ public class Deck implements IDeck {
         return cards.size() > 0 ? cards.remove(0) : null;
     }
 
-    private void swap(int a, int b){
-        ICard temp = cards.get(a);
-        cards.set(a, cards.get(b));
-        cards.set(b, temp);
-    }
+    //private void swap(int a, int b){
+    //    ICard temp = cards.get(a);
+    //    cards.set(a, cards.get(b));
+    //    cards.set(b, temp);
+    //}
 }
