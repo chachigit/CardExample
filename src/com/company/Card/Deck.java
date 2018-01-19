@@ -10,22 +10,15 @@ import java.util.Collections;
 /**
  * Created by charlie on 4/25/2017.
  */
-public class Deck implements IDeck {
-    private ArrayList<ICard> cards;
-    private SecureRandom random;
+public abstract class Deck implements IDeck {
+    protected ArrayList<ICard> cards;
+    protected SecureRandom random;
 
     public Deck(){
         random = new SecureRandom();
-
-        // initialize default standard deck.
-        // 1 card for each Suit and Face in a standard deck.
-        // TODO: refactor this to abstract out the kind of deck created. Standard deck is an assumption.
         cards = new ArrayList<>();
-        for(Constants.Suits s : Constants.Suits.values()){
-            for(Constants.Faces f : Constants.Faces.values()){
-                cards.add(new Card(s, f));
-            }
-        }
+
+        // up to concrete classes to fill the deck of cards.
     }
     
     public int getLength() {
@@ -38,7 +31,6 @@ public class Deck implements IDeck {
         // Knuth / Fisher-Yates implementation.
         for(int i = 0; i < length; i++){
             // use Collections.Swap.
-            // swap(i, random.nextInt(length - i) + i);
             Collections.swap(cards, i, random.nextInt(length - i) + i);
         }
     }
@@ -51,10 +43,4 @@ public class Deck implements IDeck {
     public ICard dealOneCard() {
         return cards.size() > 0 ? cards.remove(0) : null;
     }
-
-    //private void swap(int a, int b){
-    //    ICard temp = cards.get(a);
-    //    cards.set(a, cards.get(b));
-    //    cards.set(b, temp);
-    //}
 }
