@@ -18,6 +18,7 @@ public class Deck implements IDeck {
 
         // initialize default standard deck.
         // 1 card for each Suit and Face in a standard deck.
+        // TODO: refactor this to abstract out the kind of deck created. Standard deck is an assumption.
         cards = new ArrayList<>();
         for(Constants.Suits s : Constants.Suits.values()){
             for(Constants.Faces f : Constants.Faces.values()){
