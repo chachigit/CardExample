@@ -9,13 +9,6 @@ public class Card implements ICard {
     private Constants.Faces _face;
     private Constants.Suits _suit;
 
-    public Constants.Suits getSuit() {
-        return _suit;
-    }
-    public Constants.Faces getFace(){
-        return _face;
-    }
-
     public Card (Constants.Suits suit, Constants.Faces face){
         _suit = suit;
         _face = face;
